@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projetos - Kauã</title>
+<style>
+:root {
+  --bg-color: rgb(10,0,53);
+  --accent-color: beige;
+  --text-color: rgb(10,0,53);
+  --link-color: rgb(0,0,102);
+  --border-color: rgb(10,0,53);
+  --shadow-color: rgba(0,0,0,0.25);
+}
+
+.light-theme {
+  --bg-color: beige;
+  --accent-color: rgb(10,0,53);
+  --text-color: beige;
+  --link-color: beige;
+  --border-color: beige;
+  --shadow-color: rgba(0,0,0,0.25);
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 25px;
+  margin: 0;
+  border-bottom: 3px solid var(--border-color);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 2px solid var(--border-color);
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  margin: 10px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 20px;
+  gap: 25px;
+}
+
+.project {
+  background-color: var(--accent-color);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px var(--shadow-color);
+  width: 100%;
+  max-width: 800px;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px var(--shadow-color);
+}
+
+.project h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.project p {
+  line-height: 1.6;
+  text-align: center;
+}
+
+.project a {
+  color: var(--link-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+
+<div class="top-buttons">
+  <button onclick="toggleTheme()">Modo Escuro/Claro</button>
+  <button onclick="location.href='inicio.html'">Voltar para Início</button>
+</div>
+
+<h1>Meus Projetos</h1>
+
+<div class="container">
+  <div class="project">
+    <h2>Página de Criar Conta</h2>
+    <p>Uma página simples em HTML e CSS para criação de conta de usuário.</p>
+    <p>Link para o projeto: <a href="/criar-conta.html" target="_blank">Abrir Página de Criar Conta</a></p>
+  </div>
+
+  <div class="project">
+    <h2>Mais em Breve</h2>
+    <p>Novos projetos serão adicionados em breve. Fique de olho no meu GitHub para acompanhar as atualizações: <a href="https://github.com/kauacabral-dev" target="_blank">github.com/kauacabral-dev</a></p>
+  </div>
+</div>
+
+<script>
+function toggleTheme() {
+  document.body.classList.toggle('light-theme');
+}
+</script>
+
+</body>
+</html>

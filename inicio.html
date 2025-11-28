@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio Kauã</title>
+<style>
+:root {
+  --bg-color: rgb(10,0,53);
+  --accent-color: beige;
+  --text-color: rgb(10,0,53);
+  --link-color: rgb(10,0,53);
+  --link-hover: rgb(0,0,102);
+  --border-color: rgb(10,0,53);
+  --shadow-color: rgba(0,0,0,0.25);
+}
+
+.light-theme {
+  --bg-color: beige;
+  --accent-color: rgb(10,0,53);
+  --text-color: beige;
+  --link-color: beige;
+  --link-hover: #fffacd;
+  --border-color: beige;
+  --shadow-color: rgba(0,0,0,0.25);
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border-bottom: 3px solid var(--border-color);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.minhafoto {
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: 0 8px 15px var(--shadow-color);
+  position: relative;
+  background-color: var(--accent-color);
+  transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.info-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  justify-content: center;
+}
+
+.caixa-texto {
+  background-color: var(--accent-color);
+  width: 340px;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 8px 15px var(--shadow-color);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.caixa-texto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px var(--shadow-color);
+}
+
+.caixa-texto p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.caixa-texto ul {
+  padding-left: 20px;
+}
+
+.caixa-texto ul li a {
+  font-weight: bold;
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+.caixa-texto ul li a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.contatos {
+  background-color: var(--accent-color);
+  width: 250px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  word-wrap: break-word;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.contatos:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px var(--shadow-color);
+}
+
+.contatos h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 5px;
+  color: var(--text-color);
+}
+
+.contatos p, .contatos a {
+  color: var(--text-color);
+}
+
+.contatos a {
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+.contatos a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+@media(max-width: 800px) {
+  .info-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .minhafoto {
+    margin-bottom: 20px;
+  }
+  .caixa-texto, .contatos {
+    width: 80%;
+  }
+}
+</style>
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleTheme()">Modo Escuro/Claro</button>
+
+<h1>Hello World, eu sou Kauã</h1>
+
+<div class="container">
+  <img class="minhafoto" src="/minhafoto.jpeg" alt="Minha Foto">
+
+  <div class="info-container">
+    <div class="caixa-texto">
+      <p>Bem-vindo ao meu portfólio! <br><br>
+      Aqui você pode conhecer mais sobre mim e sobre meus trabalhos. <br><br>
+      Meu nome é Kauã Cabral, sou estudante de Desenvolvimento de Sistemas, e aqui você vai encontrar:</p>
+
+      <ul>
+          <li><a href="/linguagens.html">Linguagens que sei programar</a></li>
+          <li><a href="/projetos.html">Meus projetos</a></li>
+          <li><a href="/hobbies.html">Meus hobbies</a></li>
+      </ul>
+    </div>
+
+    <div class="contatos">
+      <h3>Contatos</h3>
+      <p>Email: <a href="mailto:kauacabral.dev@gmail.com">kauacabral.dev@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/kauacabral-dev" target="_blank">github.com/kaua</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleTheme() {
+  document.body.classList.toggle('light-theme');
+}
+</script>
+
+</body>
+</html>

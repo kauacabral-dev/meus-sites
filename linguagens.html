@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linguagens que eu sei</title>
+<style>
+:root {
+  --bg-color: rgb(10,0,53);
+  --accent-color: beige;
+  --text-color: rgb(10,0,53);
+  --link-color: rgb(10,0,53);
+  --link-hover: rgb(0,0,102);
+  --border-color: rgb(10,0,53);
+  --shadow-color: rgba(0,0,0,0.25);
+}
+
+.light-theme {
+  --bg-color: beige;
+  --accent-color: rgb(10,0,53);
+  --text-color: beige;
+  --link-color: beige;
+  --link-hover: #fffacd;
+  --border-color: beige;
+  --shadow-color: rgba(0,0,0,0.25);
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 25px;
+  margin: 0;
+  border-bottom: 3px solid var(--border-color);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 2px solid var(--border-color);
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  margin: 10px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 20px;
+  gap: 20px;
+}
+
+.linguagem {
+  background-color: var(--accent-color);
+  width: 100%;
+  max-width: 600px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px var(--shadow-color);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.linguagem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px var(--shadow-color);
+}
+
+.linguagem h2 {
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.linguagem p {
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+@media(max-width: 650px){
+  .container {
+    margin: 20px 10px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="top-buttons">
+  <button onclick="toggleTheme()">Modo Escuro/Claro</button>
+  <button onclick="location.href='inicio.html'">Voltar para Início</button>
+</div>
+
+<h1>Linguagens que eu sei</h1>
+
+<div class="container">
+  <div class="linguagem">
+    <h2>HTML</h2>
+    <p>HTML é a linguagem de marcação que utilizo para estruturar páginas web. Com HTML, consigo criar títulos, parágrafos, listas, imagens e links de forma organizada.</p>
+  </div>
+
+  <div class="linguagem">
+    <h2>CSS</h2>
+    <p>CSS é a linguagem que uso para estilizar minhas páginas. Com ela, posso definir cores, fontes, layouts e efeitos visuais, deixando meu portfólio mais bonito e moderno.</p>
+  </div>
+
+  <div class="linguagem">
+    <h2>Python</h2>
+    <p>Python é uma linguagem que utilizo para programação geral, scripts e pequenos projetos. Ela é simples e poderosa, permitindo criar desde programas básicos até automações mais complexas.</p>
+  </div>
+
+  <div class="linguagem">
+    <h2>JavaScript (iniciante)</h2>
+    <p>Estou começando a aprender JavaScript para tornar minhas páginas interativas, criando animações, validações e recursos dinâmicos.</p>
+  </div>
+</div>
+
+<script>
+function toggleTheme() {
+  document.body.classList.toggle('light-theme');
+}
+</script>
+
+</body>
+</html>

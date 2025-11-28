@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hobbies - Kauã</title>
+<style>
+:root {
+  --bg-color: rgb(10,0,53);
+  --accent-color: beige;
+  --text-color: rgb(10,0,53);
+  --border-color: rgb(10,0,53);
+  --shadow-color: rgba(0,0,0,0.25);
+}
+
+.light-theme {
+  --bg-color: beige;
+  --accent-color: rgb(10,0,53);
+  --text-color: beige;
+  --border-color: beige;
+  --shadow-color: rgba(0,0,0,0.25);
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 25px;
+  margin: 0;
+  border-bottom: 3px solid var(--border-color);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 2px solid var(--border-color);
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  margin: 10px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 20px;
+  gap: 25px;
+}
+
+.section {
+  background-color: var(--accent-color);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px var(--shadow-color);
+  width: 100%;
+  max-width: 900px;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px var(--shadow-color);
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.section p {
+  line-height: 1.6;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* Galeria horizontal */
+.gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+}
+
+.gallery::-webkit-scrollbar {
+  height: 10px;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+  background-color: var(--text-color);
+  border-radius: 5px;
+}
+
+.gallery::-webkit-scrollbar-track {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.gallery-item {
+  flex: 0 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px var(--shadow-color);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.gallery-item img {
+  display: block;
+  border-radius: 15px;
+  width: auto;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px var(--shadow-color);
+}
+
+@media(max-width: 600px){
+  .gallery-item img {
+    height: 180px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="top-buttons">
+  <button onclick="toggleTheme()">Modo Escuro/Claro</button>
+  <button onclick="location.href='inicio.html'">Voltar para Início</button>
+</div>
+
+<h1>Meus Hobbies</h1>
+
+<div class="container">
+  <div class="section">
+    <h2>Quebra-cabeças</h2>
+    <p>Eu gosto muito de resolver quebra-cabeças, especialmente do tipo cubo mágico. É uma forma de exercitar a mente e me divertir ao mesmo tempo.</p>
+  </div>
+
+  <div class="section">
+    <h2>Meus Desenhos</h2>
+    <p>Aqui estão alguns dos meus desenhos em destaque individual. Deslize para o lado para ver todos!</p>
+    <div class="gallery">
+      <div class="gallery-item"><img src="/desenho1.jpeg" alt="Desenho 1"></div>
+      <div class="gallery-item"><img src="/desenho2.jpeg" alt="Desenho 2"></div>
+      <div class="gallery-item"><img src="/desenho3.jpeg" alt="Desenho 3"></div>
+      <div class="gallery-item"><img src="/desenho4.jpeg" alt="Desenho 4"></div>
+      <div class="gallery-item"><img src="/desenho5.jpeg" alt="Desenho 5"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleTheme() {
+  document.body.classList.toggle('light-theme');
+}
+</script>
+
+</body>
+</html>
