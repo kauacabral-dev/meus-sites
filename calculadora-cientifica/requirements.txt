@@ -1,4 +1,0 @@
-Flask
-matplotlib
-numpy
-gunicorn
