@@ -100,7 +100,6 @@ button:hover {
   text-align: center;
 }
 
-/* Galeria horizontal */
 .gallery {
   display: flex;
   overflow-x: auto;
@@ -154,7 +153,7 @@ button:hover {
 <body>
 
 <div class="top-buttons">
-  <button onclick="toggleTheme()">Modo Escuro/Claro</button>
+  <button class="theme-toggle" onclick="toggleTheme()">Modo Escuro/Claro</button>
   <button onclick="location.href='inicio.html'">Voltar para Início</button>
 </div>
 
@@ -180,10 +179,25 @@ button:hover {
 </div>
 
 <script>
-function toggleTheme() {
-  document.body.classList.toggle('light-theme');
-}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('tema') === 'claro') {
+    document.body.classList.add('light-theme');
+  }
+
+  const toggleButton = document.querySelector('.theme-toggle');
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    if (document.body.classList.contains('light-theme')) {
+      localStorage.setItem('tema', 'claro');
+    } else {
+      localStorage.setItem('tema', 'escuro');
+    }
+  });
+});
+
 </script>
 
 </body>
 </html>
+
