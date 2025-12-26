@@ -116,7 +116,7 @@ button:hover {
 <body>
 
 <div class="top-buttons">
-  <button onclick="toggleTheme()">Modo Escuro/Claro</button>
+  <button class="theme-toggle" onclick="toggleTheme()">Modo Escuro/Claro</button>
   <button onclick="location.href='inicio.html'">Voltar para Início</button>
 </div>
 
@@ -124,9 +124,9 @@ button:hover {
 
 <div class="container">
   <div class="project">
-    <h2>Página de Criar Conta</h2>
-    <p>Uma página simples em HTML e CSS para criação de conta de usuário.</p>
-    <p>Link para o projeto: <a href="/criar-conta.html" target="_blank">Abrir Página de Criar Conta</a></p>
+    <h2>Calculadora Científica</h2>
+    <p>Calculadora científica desenvolvida como projeto escolar, criada para praticar e explorar conceitos de programação e matemática. (Atenção: este projeto foi inicialmente desenvolvido para PC; embora funcione em dispositivos móveis, recomenda-se o uso em computador para uma melhor experiência.)</p>
+    <p>Link para o projeto: <a href="https://calculadora.pythonanywhere.com/" target="_blank">Abrir Calculadora</a></p>
   </div>
 
   <div class="project">
@@ -136,9 +136,23 @@ button:hover {
 </div>
 
 <script>
-function toggleTheme() {
-  document.body.classList.toggle('light-theme');
-}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('tema') === 'claro') {
+    document.body.classList.add('light-theme');
+  }
+
+  const toggleButton = document.querySelector('.theme-toggle');
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    if (document.body.classList.contains('light-theme')) {
+      localStorage.setItem('tema', 'claro');
+    } else {
+      localStorage.setItem('tema', 'escuro');
+    }
+  });
+});
+
 </script>
 
 </body>
