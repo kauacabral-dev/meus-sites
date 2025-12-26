@@ -46,17 +46,18 @@ h1 {
 }
 
 .theme-toggle {
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 20px;
   background-color: var(--accent-color);
   color: var(--text-color);
   border: 2px solid var(--border-color);
-  padding: 8px 15px;
+  padding: 12px 18px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  z-index: 9999;
 }
 
 .container {
@@ -207,11 +208,24 @@ h1 {
 </div>
 
 <script>
-function toggleTheme() {
-  document.body.classList.toggle('light-theme');
-}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('tema') === 'claro') {
+    document.body.classList.add('light-theme');
+  }
+
+  const toggleButton = document.querySelector('.theme-toggle');
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    if (document.body.classList.contains('light-theme')) {
+      localStorage.setItem('tema', 'claro');
+    } else {
+      localStorage.setItem('tema', 'escuro');
+    }
+  });
+});
+
 </script>
 
 </body>
 </html>
-
