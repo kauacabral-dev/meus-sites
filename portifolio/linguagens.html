@@ -112,7 +112,7 @@ button:hover {
 <body>
 
 <div class="top-buttons">
-  <button onclick="toggleTheme()">Modo Escuro/Claro</button>
+  <button class="theme-toggle" onclick="toggleTheme()">Modo Escuro/Claro</button>
   <button onclick="location.href='inicio.html'">Voltar para Início</button>
 </div>
 
@@ -135,16 +135,36 @@ button:hover {
   </div>
 
   <div class="linguagem">
-    <h2>JavaScript (iniciante)</h2>
-    <p>Estou começando a aprender JavaScript para tornar minhas páginas interativas, criando animações, validações e recursos dinâmicos.</p>
+    <h2>JavaScript</h2>
+    <p>Tenho experiência em JavaScript para tornar minhas páginas interativas, criando animações, validações e recursos dinâmicos.</p>
+  </div>
+
+  <div class="linguagem">
+    <h2>Java</h2>
+    <p>Atualmente estou estudando Java, focando em lógica de programação, orientação a objetos e desenvolvimento de aplicações.</p>
   </div>
 </div>
 
 <script>
-function toggleTheme() {
-  document.body.classList.toggle('light-theme');
-}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('tema') === 'claro') {
+    document.body.classList.add('light-theme');
+  }
+
+  const toggleButton = document.querySelector('.theme-toggle');
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    if (document.body.classList.contains('light-theme')) {
+      localStorage.setItem('tema', 'claro');
+    } else {
+      localStorage.setItem('tema', 'escuro');
+    }
+  });
+});
+
 </script>
 
 </body>
 </html>
+
